@@ -1,0 +1,14 @@
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.AssemblyInfoInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.AssemblyInfo.cs
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\bin\Debug\net8.0\matriz.exe
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\bin\Debug\net8.0\matriz.deps.json
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\bin\Debug\net8.0\matriz.runtimeconfig.json
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\bin\Debug\net8.0\matriz.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\bin\Debug\net8.0\matriz.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\refint\matriz.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\matriz.genruntimeconfig.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\matriz\obj\Debug\net8.0\ref\matriz.dll

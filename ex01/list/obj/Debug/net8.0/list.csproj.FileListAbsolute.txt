@@ -1,0 +1,14 @@
+C:\Users\sthefany.ppassos\source\repos\ex01\list\bin\Debug\net8.0\list.exe
+C:\Users\sthefany.ppassos\source\repos\ex01\list\bin\Debug\net8.0\list.deps.json
+C:\Users\sthefany.ppassos\source\repos\ex01\list\bin\Debug\net8.0\list.runtimeconfig.json
+C:\Users\sthefany.ppassos\source\repos\ex01\list\bin\Debug\net8.0\list.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\list\bin\Debug\net8.0\list.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.AssemblyInfoInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.AssemblyInfo.cs
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\refint\list.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\list.genruntimeconfig.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\list\obj\Debug\net8.0\ref\list.dll

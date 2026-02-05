@@ -1,0 +1,14 @@
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\bin\Debug\net8.0\laço 2.exe
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\bin\Debug\net8.0\laço 2.deps.json
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\bin\Debug\net8.0\laço 2.runtimeconfig.json
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\bin\Debug\net8.0\laço 2.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\bin\Debug\net8.0\laço 2.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.AssemblyInfoInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.AssemblyInfo.cs
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\refint\laço 2.dll
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.pdb
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\laço 2.genruntimeconfig.cache
+C:\Users\sthefany.ppassos\source\repos\ex01\laço 2\obj\Debug\net8.0\ref\laço 2.dll
