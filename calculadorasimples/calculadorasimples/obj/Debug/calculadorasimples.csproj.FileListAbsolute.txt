@@ -1,0 +1,11 @@
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\bin\Debug\calculadorasimples.exe.config
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\bin\Debug\calculadorasimples.exe
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\bin\Debug\calculadorasimples.pdb
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.csproj.AssemblyReference.cache
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.FrnCalculadoraSimples.resources
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.Properties.Resources.resources
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.csproj.GenerateResource.cache
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.exe
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.pdb
+C:\Users\sthefany.ppassos\source\repos\calculadorasimples\calculadorasimples\obj\Debug\calculadorasimples.exe.config

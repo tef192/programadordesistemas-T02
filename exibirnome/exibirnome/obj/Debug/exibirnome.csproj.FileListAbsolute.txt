@@ -1,0 +1,11 @@
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\bin\Debug\exibirnome.exe.config
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\bin\Debug\exibirnome.exe
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\bin\Debug\exibirnome.pdb
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.csproj.AssemblyReference.cache
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.FrmExibirNome.resources
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.Properties.Resources.resources
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.csproj.GenerateResource.cache
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.exe
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.pdb
+C:\Users\sthefany.ppassos\source\repos\exibirnome\exibirnome\obj\Debug\exibirnome.exe.config
