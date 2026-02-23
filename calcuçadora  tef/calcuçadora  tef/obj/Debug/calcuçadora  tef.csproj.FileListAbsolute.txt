@@ -1,0 +1,11 @@
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\bin\Debug\calcuçadora  tef.exe.config
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\bin\Debug\calcuçadora  tef.exe
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\bin\Debug\calcuçadora  tef.pdb
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.csproj.AssemblyReference.cache
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora__tef.calculadora.resources
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora__tef.Properties.Resources.resources
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.csproj.GenerateResource.cache
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.exe
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.pdb
+C:\Users\sthefany.ppassos\source\repos\calcuçadora  tef\calcuçadora  tef\obj\Debug\calcuçadora  tef.exe.config

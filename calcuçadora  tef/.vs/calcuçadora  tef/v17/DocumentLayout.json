@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD2F772-AFC3-4636-B08F-9A550F93316F}|calcu\u00E7adora  tef\\calcu\u00E7adora  tef.csproj|c:\\users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCD2F772-AFC3-4636-B08F-9A550F93316F}|calcu\u00E7adora  tef\\calcu\u00E7adora  tef.csproj|solutionrelative:calcu\u00E7adora  tef\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD2F772-AFC3-4636-B08F-9A550F93316F}|calcu\u00E7adora  tef\\calcu\u00E7adora  tef.csproj|C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DCD2F772-AFC3-4636-B08F-9A550F93316F}|calcu\u00E7adora  tef\\calcu\u00E7adora  tef.csproj|solutionrelative:calcu\u00E7adora  tef\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\Form1.cs",
+              "RelativeDocumentMoniker": "calcu\u00E7adora  tef\\Form1.cs",
+              "ToolTip": "C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\Form1.cs",
+              "RelativeToolTip": "calcu\u00E7adora  tef\\Form1.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAMwJAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:15:27.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\Form1.cs",
+              "RelativeDocumentMoniker": "calcu\u00E7adora  tef\\Form1.cs",
+              "ToolTip": "C:\\Users\\sthefany.ppassos\\source\\repos\\calcu\u00E7adora  tef\\calcu\u00E7adora  tef\\Form1.cs [Design]",
+              "RelativeToolTip": "calcu\u00E7adora  tef\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T18:08:43.924Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
