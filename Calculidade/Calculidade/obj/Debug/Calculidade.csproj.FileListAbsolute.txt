@@ -1,0 +1,11 @@
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\bin\Debug\Calculidade.exe.config
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\bin\Debug\Calculidade.exe
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\bin\Debug\Calculidade.pdb
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.csproj.AssemblyReference.cache
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.frmCalcularidade.resources
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.Properties.Resources.resources
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.csproj.GenerateResource.cache
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.csproj.CoreCompileInputs.cache
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.exe
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.pdb
+C:\Users\sthefany.ppassos\source\repos\Calculidade\Calculidade\obj\Debug\Calculidade.exe.config
