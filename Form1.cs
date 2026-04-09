@@ -1,57 +1,199 @@
-﻿using System;
+﻿//acessando o pacote do mysql
+
+using Mysql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsForms
+namespace crud
+
 {
-    public partial class Form1 : Form
+
+    public partial class frmCadastrodeClientes : Form
+
     {
-        // Variáveis para controle da largura
-        private bool isCollapsed = false;
-        private const int ExpandedWidth = 220;
-        private const int CollapsedWidth = 60;
 
-        public Form1()
+        //Conexão com o banco de dados MySQl
+
+        MySqlConnection Conexao;
+
+        string data_source = "datasource=localhost; username=root; password=; database=db_cadastro";
+        private object txtCPF;
+        private object txtNomeCompleto;
+        private object txtEmail;
+        private object txtNomeSocial;
+        private object ex;
+
+        public frmCadastrodeClientes()
+
         {
-            InitializeComponent();
-            ConfigurarDesign();
+
+            InitializeComponent ();
+
         }
 
-        private void ConfigurarDesign()
-        {
-            // Força a janela a abrir em tela cheia
-            this.WindowState = FormWindowState.Maximized;
-            this.Text = "Sistema de Gestão - Dashboard";
+        public string Ocorreu { get; private set; }
+        public object Return { get; private set; }
 
-            // Configuração básica do Painel Lateral
-            panelPrincipal.Width = ExpandedWidth;
-            panelPrincipal.BackColor = Color.FromArgb(45, 45, 48); // Cinza escuro profissional
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
+        private (string, MessageBoxButtons OK, MessageBoxIcon Error) tabControl1_Click(object sender, EventArgs e)
         {
-            // Lógica simples de expansão/contração
-            if (isCollapsed)
+
+            try
+
             {
-                panelPrincipal.Width = ExpandedWidth;
-                btnHome.Text = "  MENU";
-                isCollapsed = false;
+
+                //Validando campos obrigatórios
+
+                if (string.IsNullOrEmpty(txtNomeCompleto.Text.Trim()) ||
+
+                    string.IsNullOrEmpty(txtEmail.Text.Trim()) ||
+
+                    string.IsNullOrEmpty(txtCPF.Text.Trim()))
+
+                {
+
+                    MessageBox.Show("Todos os campos devem ser preenchidos.",
+
+                                    "Validação",
+
+                                    MessageBoxButtons.OK,
+
+                                    MessageBoxIcon.Warning);
+
+                    return; // Impede o prosseguimento se algum campo estiver vazio
+
+                }
+
+                //validação do CPF
+
+                string cpf = txtCPF.text.Trim();
+
+                if (!isValidCPFLength(cpf))
+
+                {
+
+                    MessageBox.Show("CPF inválido. Certifique-se de que o CPF tenha 11 dígitos númericos.",
+
+                        "Validação de CPF",
+
+                        MessageBoxButtons.OK,
+
+                        MessageBoxIcon.Warning);
+
+                    return; // Impede o prosseguimento se o CPF for inválido
+
+                }
+
+                //Cria a conexão com o banco de dados
+
+                Conexao = new MySqlConnection(data_source);
+
+                Conexao.Open();
+
+                //Comando SQL para inserir um novo cliente no banco de dados
+
+                MySqlCommand cmd = new MySqlCommand
+
+                {
+
+                    Connection = Conexao
+
+                };
+
+                cmd.Prepare();
+
+                cmd.CommandText = "INSERT INTO dadosdocliente(nomecompleto, nomesocial, email, cpf) " +
+
+                "VALUES(@nomecompleto, @nomesocial, @email, @cpf)";
+
+                //Adiciona os parâmetros com os dados do formulário
+
+                cmd.Parameters.AddWithValue("@nomecompleto", txtNomeCompleto.Text.Trim());
+
+                cmd.Parameters.AddWithValue("@nomesocial", txtNomeSocial.Text.Trim());
+
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
+
+                cmd.Parameters.AddWithValue("@cpf", txtCPF.Text.Trim());
+
+                //Executa o comando de inserção no banco
+
+                cmd.ExecuteNonQuery();
+
+                //Mensagem de sucesso
+
+                MessageBox.Show("Contato inserido com Sucesso: ",
+
+                                "Sucesso",
+
+                                MessageBoxButtons.OK,
+
+                                MessageBoxIcon.Information);
+
             }
-            else
-            { 
-                .Width = CollapsedWidth;
-                btnHome.Text = "  ☰";
-                isCollapsed = true;
+
+            catch (MySqlExpepcion ex)
+            {
+                //Trata erros relacionados ao MySql
+                MessageBox.Show("Erro" + ex.Number + Ocorreu: "  + ex.Message, )
+            }                  ("Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            Catch(Expression ex)
+            {
+                //Trata outros tipos de erro
+                MessageBox.Show("Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
             }
+            
+            finally
+
+            {
+                //Garante que a conexão com o banco será fechado, mesmo se ocorrer erro 
+                if (Conexao != null && Conexao.State == ConnectionState.Open)
+                {
+                    Conexao.CLose();
+
+                }
+{}
+            }
+
         }
+
+        private void Catch(Expression expression, object ex)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Catch()
+        {
+            throw new NotImplementedException();
+        }
+
+        // Função para validar o comprimento e formato do CPF
+
+        private bool isValidCPFLength(string cpf)
+
+        {
+
+            // Remove todos os caracteres não numéricos
+
+            cpf = new string(cpf.Where(char.IsDigit).ToArray());
+
+            // Verifica se o CPF tem exatamente 11 dígitos
+
+            return cpf.Length == 11;
+
+        }
+
+
+
     }
 
-
+}
 
