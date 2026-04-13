@@ -1,16 +1,24 @@
-﻿//acessando o pacote do mysql
+﻿using System;
 
-using Mysql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
+
 using System.ComponentModel;
+
 using System.Data;
+
 using System.Drawing;
+
 using System.Linq;
-using System.Linq.Expressions;
+
 using System.Text;
+
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
+
+//acessando o pacote do mysql
+
+using MySql.Data.MySqlClient;
 
 namespace crud
 
@@ -25,24 +33,53 @@ namespace crud
         MySqlConnection Conexao;
 
         string data_source = "datasource=localhost; username=root; password=; database=db_cadastro";
-        private object txtCPF;
         private object txtNomeCompleto;
-        private object txtEmail;
         private object txtNomeSocial;
-        private object ex;
+        private object txtEmail;
+        private object txtCPF;
+        private object lstCliente;
+
+        public object TabControl1 { get; private set; }
 
         public frmCadastrodeClientes()
 
         {
 
-            InitializeComponent ();
+            InitializeComponent();
+
+            //Configuração inicial do ListView para exibição dos dados dos clientes
+
+            LstCliente.View = View.Details;  //Define a visualização em "detalhes"
+
+            LstCliente.LabelEdit = true; //Permite editar os títulos das colunas
+
+            LstCliente.AllowColumnReorder = true; //Permite reordenar as colunas
+
+            LstCliente.FullRowSelect = true; //Seleciona a linha inteira ao clicar
+
+            LstCliente.GridLines = true; //Exibe as linhas de grade no ListView
+
+
+            //Definindo as colunas do Listview
+
+            LstCliente.Columns.Add("Código", 100, HorizontalAlignment.Left); // Coluna do código
+
+            LstCliente.Columns.Add("Nome Completo", 200, HorizontalAlignment.Left); //Coluna de Nome Completo
+
+            LstCliente.Columns.Add("Nome Social", 200, HorizontalAlignment.Left); //Coluna de Nome Social
+
+            LstCliente.Columns.Add("E-mail", 200, HorizontalAlignment.Left); // Coluna de E-mail
+
+            LstCliente.Columns.Add("CPF", 200, HorizontalAlignment.Left); //Coluna de CPF
+
+            //Carrega os dados dos clientes na interface
+
+            carregar_clientes();
 
         }
 
-        public string Ocorreu { get; private set; }
-        public object Return { get; private set; }
+        private void btnSalvar_Click(object sender, EventArgs e)
 
-        private (string, MessageBoxButtons OK, MessageBoxIcon Error) tabControl1_Click(object sender, EventArgs e)
         {
 
             try
@@ -73,7 +110,7 @@ namespace crud
 
                 //validação do CPF
 
-                string cpf = txtCPF.text.Trim();
+                string cpf = txtCPF.Text.Trim();
 
                 if (!isValidCPFLength(cpf))
 
@@ -137,42 +174,61 @@ namespace crud
 
                                 MessageBoxIcon.Information);
 
+                //Limpa os campos após o sucesso
+                txtNomeCompleto.text = String.Empty;
+                txtNomeSocial.text = "";
+                txtEmail.text = "";
+                txtCPF.Text = "";
+
+                //REcarrega os clientes na ListVIew
+                carregar_clientes();
+
+                //Muda para a aba de consulta 
+                TabControl1.SelectedIndex = 1;
+
+
             }
 
-            catch (MySqlExpepcion ex)
-            {
-                //Trata erros relacionados ao MySql
-                MessageBox.Show("Erro" + ex.Number + Ocorreu: "  + ex.Message, )
-            }                  ("Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (MySqlException ex)
 
-            Catch(Expression ex)
             {
+
+                //Trata erros relacionados ao MySQL
+
+                MessageBox.Show("Erro " + ex.Number + " ocorreu: " + ex.Message,
+
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            catch (Exception ex)
+
+            {
+
                 //Trata outros tipos de erro
-                MessageBox.Show("Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                MessageBox.Show("Ocorreu: " + ex.Message,
+
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            
+
             finally
 
             {
-                //Garante que a conexão com o banco será fechado, mesmo se ocorrer erro 
+
+                //Garante que a conexão com o banco será fechada, mesmo se ocorrer erro
+
                 if (Conexao != null && Conexao.State == ConnectionState.Open)
+
                 {
-                    Conexao.CLose();
+
+                    Conexao.Close();
 
                 }
-{}
+
             }
 
-        }
-
-        private void Catch(Expression expression, object ex)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Catch()
-        {
-            throw new NotImplementedException();
         }
 
         // Função para validar o comprimento e formato do CPF
@@ -190,10 +246,143 @@ namespace crud
             return cpf.Length == 11;
 
         }
+          
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
 
+        {
+            string query = "SELECT * FROM dadosdocliente WHERE nomecompleto LIKE @q OR nomesocial LIKE @q ORDER BY codigo DESC";
+            carregar_clientes_com_query(query);
+        }
 
+        private void carregar_clientes_com_query(string query)
+
+        {
+
+            try
+
+            {
+
+                //Cria a conexão com o banco de dados
+
+                Conexao = new MySqlConnection(data_source);
+
+                Conexao.Open();
+
+                //Executa a consulta SQL fornecida
+
+                MySqlCommand cmd = new MySqlCommand(query, Conexao);
+
+                //Se a consulta contém o parâmetro @q, adiciona o valor da caixa de pesquisa
+
+                if (query.Contains("@q"))
+
+                {
+
+                    cmd.Parameters.AddWithValue("@q", "%" + txtBuscar.Text + "%");
+
+                }
+
+                //Executa o comando e obtém os resultados
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //Limpa os itens existentes no Listview antes de adicionar novos
+
+                LstCliente.Items.Clear();
+
+                //Preenche o ListView com os dados dos clientes
+
+                while (reader.Read())
+
+                {
+
+                    //Cria uma linha para cada cliente com os dados retornados da consulta
+
+                    string[] row =
+
+                    {
+
+                        Convert.ToString(reader.GetInt32(0)), //Código
+
+                        reader.GetString(1),                  //Nome Completo
+
+                        reader.GetString(2),                  //Nome Social
+
+                        reader.GetString(3),                  //E-mail
+
+                        reader.GetString(4)                   //CPF
+
+                    };
+
+                    //Adiciona a linha ao ListView
+
+                    LstCliente.Items.Add(new ListViewItem(row));
+
+                }
+
+            }
+
+            catch (MySqlException ex)
+
+            {
+
+                //Trata erros relacionados ao MySQL
+
+                MessageBox.Show("Erro " + ex.Number + " ocorreu: " + ex.Message,
+
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            catch (Exception ex)
+
+            {
+
+                //Trata outros tipos de erro
+
+                MessageBox.Show("Ocorreu: " + ex.Message,
+
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+
+            {
+
+                //Garante que a conexão com o banco será fechada, mesmo se ocorrer erro
+
+                if (Conexao != null && Conexao.State == ConnectionState.Open)
+
+                {
+
+                    Conexao.Close();
+
+                }
+
+            }
+
+        }
+
+        private void carregar_clientes()
+
+        {
+
+            string query = "SELECT * FROM dadosdocliente ORDER BY codigo DESC";
+
+            carregar_clientes_com_query(query);
+
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
+
+
+
 
