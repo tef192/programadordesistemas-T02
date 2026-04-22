@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,7 +17,7 @@ namespace crud
 {
     public partial class frmCadastro : Form
     {
-       
+
         //Conexão com o banco de dados MySQL
         MySqlConnection Conexao;
         string data_source = "datasource=localhost; username=root; password=; database=db_cadastro";
@@ -28,7 +29,7 @@ namespace crud
         public frmCadastro()
         {
             InitializeComponent();
-            
+
             //Configuração inciial do ListView para exibição dos dados dos clientes
             lstCliente.View = View.Details; //Define a visualização em "detalhes"
             lstCliente.LabelEdit = true; //Permite editar os títulos das colunas
@@ -52,7 +53,7 @@ namespace crud
             try
             {
                 //Validando campos obrigatórios
-                if(string.IsNullOrEmpty(txtNomeCompleto.Text.Trim()) || 
+                if (string.IsNullOrEmpty(txtNomeCompleto.Text.Trim()) ||
                     string.IsNullOrEmpty(txtEmail.Text.Trim()) ||
                     string.IsNullOrEmpty(txtCPF.Text.Trim()))
                 {
@@ -70,11 +71,11 @@ namespace crud
                 if (!isValidCPFLength(cpf))
                 {
                     MessageBox.Show(
-                        "Cpf Inválido. Certifique-se de que o CPF tenha 11 dígitos numéricos", 
-                        "Validação de CPF", 
-                        MessageBoxButtons.OK, 
+                        "Cpf Inválido. Certifique-se de que o CPF tenha 11 dígitos numéricos",
+                        "Validação de CPF",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
-               
+
                     return;
                 }
 
@@ -191,14 +192,14 @@ namespace crud
             finally
             {
                 //Garante que a conexão com o banco será fechda, mesmo se ocorrer erro
-                if(Conexao != null && Conexao.State == ConnectionState.Open)
+                if (Conexao != null && Conexao.State == ConnectionState.Open)
                 {
                     Conexao.Close();
                 }
             }
         }
 
-        private bool isValidCPFLength (string cpf)
+        private bool isValidCPFLength(string cpf)
         {
             // Remove todos os caracteres não númericos
             cpf = new string(cpf.Where(char.IsDigit).ToArray());
@@ -225,7 +226,7 @@ namespace crud
                 MySqlCommand cmd = new MySqlCommand(query, Conexao);
 
                 //Se a consulta contém o parâmetro @q, adiciona o valor da caixa de pesquisa
-                if(query.Contains("@q"))
+                if (query.Contains("@q"))
                 {
                     cmd.Parameters.AddWithValue("@q", "%" + txtBuscar.Text + "%");
                 }
@@ -288,7 +289,7 @@ namespace crud
             ListView.SelectedListViewItemCollection clientedaselecao = lstCliente.SelectedItems;
 
             // Percorrer todos os item selecionados (mesmo que normalmente só tenha um item selecionado)
-            foreach(ListViewItem item in clientedaselecao)
+            foreach (ListViewItem item in clientedaselecao)
             {
 
                 codigo_cliente = Convert.ToInt32(item.SubItems[0].Text);
@@ -304,20 +305,113 @@ namespace crud
                 txtNomeCompleto.Text = item.SubItems[1].Text;
                 txtNomeSocial.Text = item.SubItems[2].Text;
                 txtEmail.Text = item.SubItems[3].Text;
-                txtCPF.Text = item.SubItems[4].Text; 
+                txtCPF.Text = item.SubItems[4].Text;
+
+                btnExcluirCliente.Visible = true;
+
             }
         }
 
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            codigo_cliente = null;
+           limpar_formulario();
+        }
 
-            txtNomeCompleto.Clear();
-            txtNomeSocial.Clear();
-            txtEmail.Clear();
-            txtCPF.Clear();
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            excluir_cliente();
+        }
+
+
+
+        private void btnExcluirCliente_Click(object sender, EventArgs e)
+        {
+            excluir_cliente();
+        }
+
+
+        private void excluir_cliente()
+        {
+            {
+                try
+                {
+                    DialogResult opcaDigitada = MessageBox.Show("Tem certeza que deseja excluir o registro de código" + codigo_cliente,
+                                     "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (opcaDigitada == DialogResult.Yes)
+                    {
+                        //Excluir no Banco de dados
+                        Conexao = new MySqlConnection(data_source);
+                        Conexao.Open();
+
+                        MySqlCommand cmd = new MySqlCommand();
+
+                        cmd.Connection = Conexao;
+
+                        cmd.Prepare();
+
+                        cmd.CommandText = "DELETE FROM dadosdocliente WHERE codigo = @codigo";
+
+                        cmd.Parameters.AddWithValue("@codigo", codigo_cliente);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Os dados do cliente foram EXCLUÍDOS!",
+                                        "sucesso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+
+                        limpar_formulario();
+
+                        carregar_clientes();
+                        //Muda para a aba de consulta
+                        tabControl.SelectedIndex = 1;
+
+                        btnExcluirCliente.Visible = true;
+
+
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    //Trata erros relacionados ao MySQL
+                    MessageBox.Show("Erro " + ex.Number + " ocorreu: " + ex.Message,
+                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    //Trata outros tipos de erro
+                    MessageBox.Show("Ocorreu: " + ex.Message,
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                finally
+                {
+                    //Garante que a conexão com o banco será fechda, mesmo se ocorrer erro
+                    if (Conexao != null && Conexao.State == ConnectionState.Open)
+                    {
+                        Conexao.Close();
+                    }
+                }
+            }
+
+        }
+
+        private void limpar_formulario()
+        {
+            codigo_cliente = null;
+            txtNomeCompleto.Text = string.Empty;
+            txtNomeSocial.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtCPF.Text = string.Empty;
 
             txtNomeCompleto.Focus();
+
+            btnExcluirCliente.Visible = false;
         }
-    }
-}
+
+
+    }   
+
+}       
