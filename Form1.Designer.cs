@@ -1,6 +1,6 @@
-﻿namespace crud
+﻿namespace FormularioSimples
 {
-    partial class frmCadastro
+    partial class Form1
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,309 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panelTopo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtNomeSocial = new System.Windows.Forms.TextBox();
+            this.gpboxGenero = new System.Windows.Forms.GroupBox();
+            this.rbOutro = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFeminino = new System.Windows.Forms.RadioButton();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.txtNumeroCadastrado = new System.Windows.Forms.TextBox();
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
-            this.labelCPF = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.labelNomeS = new System.Windows.Forms.Label();
-            this.labelNomeC = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lstCliente = new System.Windows.Forms.ListView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.btnNovoCadastro = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExcluirCliente = new System.Windows.Forms.Button();
-            this.panelTopo.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.btnCadastro = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DTDatadeNascimento = new System.Windows.Forms.DateTimePicker();
+            this.lblDatadeNascimento = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtpesquisa = new System.Windows.Forms.TextBox();
+            this.btnpesquisar = new System.Windows.Forms.Button();
+            this.gpboxGenero.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelTopo
+            // gpboxGenero
             // 
-            this.panelTopo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelTopo.Controls.Add(this.label1);
-            this.panelTopo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopo.Location = new System.Drawing.Point(0, 0);
-            this.panelTopo.Name = "panelTopo";
-            this.panelTopo.Size = new System.Drawing.Size(800, 100);
-            this.panelTopo.TabIndex = 0;
+            this.gpboxGenero.Controls.Add(this.rbOutro);
+            this.gpboxGenero.Controls.Add(this.rbMasculino);
+            this.gpboxGenero.Controls.Add(this.rbFeminino);
+            this.gpboxGenero.Location = new System.Drawing.Point(45, 290);
+            this.gpboxGenero.Name = "gpboxGenero";
+            this.gpboxGenero.Size = new System.Drawing.Size(121, 114);
+            this.gpboxGenero.TabIndex = 0;
+            this.gpboxGenero.TabStop = false;
+            this.gpboxGenero.Text = "Gênero";
+            // 
+            // rbOutro
+            // 
+            this.rbOutro.AutoSize = true;
+            this.rbOutro.Location = new System.Drawing.Point(11, 77);
+            this.rbOutro.Name = "rbOutro";
+            this.rbOutro.Size = new System.Drawing.Size(51, 17);
+            this.rbOutro.TabIndex = 2;
+            this.rbOutro.TabStop = true;
+            this.rbOutro.Text = "Outro";
+            this.rbOutro.UseVisualStyleBackColor = true;
+            // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(11, 54);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbMasculino.TabIndex = 1;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rbFeminino
+            // 
+            this.rbFeminino.AutoSize = true;
+            this.rbFeminino.Location = new System.Drawing.Point(11, 31);
+            this.rbFeminino.Name = "rbFeminino";
+            this.rbFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rbFeminino.TabIndex = 0;
+            this.rbFeminino.TabStop = true;
+            this.rbFeminino.Text = "Feminino";
+            this.rbFeminino.UseVisualStyleBackColor = true;
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "São Paulo",
+            "Rio de Janeiro",
+            "Salvador",
+            "Florianópolis",
+            "Amazonas",
+            "Mato Grosso"});
+            this.cbEstado.Location = new System.Drawing.Point(45, 236);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cbEstado.TabIndex = 1;
+            // 
+            // txtNumeroCadastrado
+            // 
+            this.txtNumeroCadastrado.Location = new System.Drawing.Point(45, 50);
+            this.txtNumeroCadastrado.Name = "txtNumeroCadastrado";
+            this.txtNumeroCadastrado.Size = new System.Drawing.Size(121, 20);
+            this.txtNumeroCadastrado.TabIndex = 2;
+            // 
+            // txtNomeCompleto
+            // 
+            this.txtNomeCompleto.Location = new System.Drawing.Point(45, 109);
+            this.txtNomeCompleto.Name = "txtNomeCompleto";
+            this.txtNomeCompleto.Size = new System.Drawing.Size(121, 20);
+            this.txtNomeCompleto.TabIndex = 3;
+            this.txtNomeCompleto.Text = "Insira o nome completo";
+            // 
+            // btnCadastro
+            // 
+            this.btnCadastro.Location = new System.Drawing.Point(56, 453);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(89, 23);
+            this.btnCadastro.TabIndex = 4;
+            this.btnCadastro.Text = "Cadastrar";
+            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 31);
+            this.label1.Location = new System.Drawing.Point(42, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cadastro de Clientes";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Número Cadastro:";
             // 
-            // tabControl
+            // label2
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(12, 106);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(763, 255);
-            this.tabControl.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Nome:";
             // 
-            // tabPage1
+            // label3
             // 
-            this.tabPage1.Controls.Add(this.txtCPF);
-            this.tabPage1.Controls.Add(this.txtEmail);
-            this.tabPage1.Controls.Add(this.txtNomeSocial);
-            this.tabPage1.Controls.Add(this.txtNomeCompleto);
-            this.tabPage1.Controls.Add(this.labelCPF);
-            this.tabPage1.Controls.Add(this.labelEmail);
-            this.tabPage1.Controls.Add(this.labelNomeS);
-            this.tabPage1.Controls.Add(this.labelNomeC);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(755, 229);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dados de Clientes";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Estado:";
             // 
-            // txtCPF
+            // DTDatadeNascimento
             // 
-            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(151, 159);
-            this.txtCPF.Mask = "###,###,###-##";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(129, 26);
-            this.txtCPF.TabIndex = 8;
+            this.DTDatadeNascimento.Location = new System.Drawing.Point(45, 174);
+            this.DTDatadeNascimento.Name = "DTDatadeNascimento";
+            this.DTDatadeNascimento.Size = new System.Drawing.Size(121, 20);
+            this.DTDatadeNascimento.TabIndex = 8;
             // 
-            // txtEmail
+            // lblDatadeNascimento
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(151, 118);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(442, 26);
-            this.txtEmail.TabIndex = 6;
+            this.lblDatadeNascimento.AutoSize = true;
+            this.lblDatadeNascimento.Location = new System.Drawing.Point(42, 158);
+            this.lblDatadeNascimento.Name = "lblDatadeNascimento";
+            this.lblDatadeNascimento.Size = new System.Drawing.Size(107, 13);
+            this.lblDatadeNascimento.TabIndex = 9;
+            this.lblDatadeNascimento.Text = "Data de Nascimento:";
             // 
-            // txtNomeSocial
+            // dataGridView1
             // 
-            this.txtNomeSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeSocial.Location = new System.Drawing.Point(151, 75);
-            this.txtNomeSocial.Name = "txtNomeSocial";
-            this.txtNomeSocial.Size = new System.Drawing.Size(442, 26);
-            this.txtNomeSocial.TabIndex = 5;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(344, 158);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 10;
             // 
-            // txtNomeCompleto
+            // txtpesquisa
             // 
-            this.txtNomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCompleto.Location = new System.Drawing.Point(151, 35);
-            this.txtNomeCompleto.Name = "txtNomeCompleto";
-            this.txtNomeCompleto.Size = new System.Drawing.Size(442, 26);
-            this.txtNomeCompleto.TabIndex = 4;
+            this.txtpesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpesquisa.Location = new System.Drawing.Point(344, 129);
+            this.txtpesquisa.Name = "txtpesquisa";
+            this.txtpesquisa.Size = new System.Drawing.Size(157, 26);
+            this.txtpesquisa.TabIndex = 11;
+            this.txtpesquisa.Text = "...";
+            this.txtpesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtpesquisa.TextChanged += new System.EventHandler(this.txtpesquisa_TextChanged);
             // 
-            // labelCPF
+            // btnpesquisar
             // 
-            this.labelCPF.AutoSize = true;
-            this.labelCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCPF.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelCPF.Location = new System.Drawing.Point(22, 157);
-            this.labelCPF.Name = "labelCPF";
-            this.labelCPF.Size = new System.Drawing.Size(40, 20);
-            this.labelCPF.TabIndex = 3;
-            this.labelCPF.Text = "CPF";
+            this.btnpesquisar.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnpesquisar.Location = new System.Drawing.Point(507, 132);
+            this.btnpesquisar.Name = "btnpesquisar";
+            this.btnpesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnpesquisar.TabIndex = 12;
+            this.btnpesquisar.Text = "Pesquisar";
+            this.btnpesquisar.UseVisualStyleBackColor = false;
+            this.btnpesquisar.Click += new System.EventHandler(this.btnpesquisar_Click);
             // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelEmail.Location = new System.Drawing.Point(22, 118);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(53, 20);
-            this.labelEmail.TabIndex = 2;
-            this.labelEmail.Text = "E-mail";
-            // 
-            // labelNomeS
-            // 
-            this.labelNomeS.AutoSize = true;
-            this.labelNomeS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeS.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelNomeS.Location = new System.Drawing.Point(22, 75);
-            this.labelNomeS.Name = "labelNomeS";
-            this.labelNomeS.Size = new System.Drawing.Size(98, 20);
-            this.labelNomeS.TabIndex = 1;
-            this.labelNomeS.Text = "Nome Social";
-            // 
-            // labelNomeC
-            // 
-            this.labelNomeC.AutoSize = true;
-            this.labelNomeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeC.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelNomeC.Location = new System.Drawing.Point(22, 35);
-            this.labelNomeC.Name = "labelNomeC";
-            this.labelNomeC.Size = new System.Drawing.Size(123, 20);
-            this.labelNomeC.TabIndex = 0;
-            this.labelNomeC.Text = "Nome Completo";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.lstCliente);
-            this.tabPage2.Controls.Add(this.btnPesquisar);
-            this.tabPage2.Controls.Add(this.txtBuscar);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(755, 229);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consulta";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // lstCliente
-            // 
-            this.lstCliente.ContextMenuStrip = this.contextMenuStrip1;
-            this.lstCliente.HideSelection = false;
-            this.lstCliente.Location = new System.Drawing.Point(16, 59);
-            this.lstCliente.MultiSelect = false;
-            this.lstCliente.Name = "lstCliente";
-            this.lstCliente.Size = new System.Drawing.Size(722, 157);
-            this.lstCliente.TabIndex = 2;
-            this.lstCliente.UseCompatibleStateImageBehavior = false;
-            this.lstCliente.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstCliente_ItemSelectionChanged);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.DarkMagenta;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(253, 20);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(97, 33);
-            this.btnPesquisar.TabIndex = 1;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(16, 23);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(231, 26);
-            this.txtBuscar.TabIndex = 0;
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.ForeColor = System.Drawing.Color.White;
-            this.buttonSalvar.Location = new System.Drawing.Point(37, 388);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(124, 37);
-            this.buttonSalvar.TabIndex = 2;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = false;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // btnNovoCadastro
-            // 
-            this.btnNovoCadastro.BackColor = System.Drawing.Color.Green;
-            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(241, 393);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(151, 33);
-            this.btnNovoCadastro.TabIndex = 3;
-            this.btnNovoCadastro.Text = "Novo Cadastro";
-            this.btnNovoCadastro.UseVisualStyleBackColor = false;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
-            this.toolStripMenuItem1.Text = "Excluir Cliente";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // btnExcluirCliente
-            // 
-            this.btnExcluirCliente.BackColor = System.Drawing.Color.Red;
-            this.btnExcluirCliente.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirCliente.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirCliente.Location = new System.Drawing.Point(627, 392);
-            this.btnExcluirCliente.Name = "btnExcluirCliente";
-            this.btnExcluirCliente.Size = new System.Drawing.Size(120, 34);
-            this.btnExcluirCliente.TabIndex = 5;
-            this.btnExcluirCliente.Text = "Excluir";
-            this.btnExcluirCliente.UseVisualStyleBackColor = false;
-            this.btnExcluirCliente.Visible = false;
-            this.btnExcluirCliente.Click += new System.EventHandler(this.btnExcluirCliente_Click);
-            // 
-            // frmCadastro
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnExcluirCliente);
-            this.Controls.Add(this.btnNovoCadastro);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.panelTopo);
-            this.Name = "frmCadastro";
-            this.Text = "Cadastro de Clientes";
-            this.panelTopo.ResumeLayout(false);
-            this.panelTopo.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.ClientSize = new System.Drawing.Size(696, 508);
+            this.Controls.Add(this.btnpesquisar);
+            this.Controls.Add(this.txtpesquisa);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblDatadeNascimento);
+            this.Controls.Add(this.DTDatadeNascimento);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCadastro);
+            this.Controls.Add(this.txtNomeCompleto);
+            this.Controls.Add(this.txtNumeroCadastrado);
+            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(this.gpboxGenero);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.gpboxGenero.ResumeLayout(false);
+            this.gpboxGenero.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelTopo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtNomeSocial;
+        private System.Windows.Forms.GroupBox gpboxGenero;
+        private System.Windows.Forms.RadioButton rbOutro;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbFeminino;
+        private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.TextBox txtNumeroCadastrado;
         private System.Windows.Forms.TextBox txtNomeCompleto;
-        private System.Windows.Forms.Label labelCPF;
-        private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.Label labelNomeS;
-        private System.Windows.Forms.Label labelNomeC;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
-        private System.Windows.Forms.ListView lstCliente;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnNovoCadastro;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button btnExcluirCliente;
+        private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker DTDatadeNascimento;
+        private System.Windows.Forms.Label lblDatadeNascimento;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtpesquisa;
+        private System.Windows.Forms.Button btnpesquisar;
     }
 }
 
